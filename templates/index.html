@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+        <style>
+        
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.596);
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+textarea {
+    width: 150%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #fcfafa;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+textarea[name="input_text"] {
+    height: 400px;
+    width : 400px;
+    resize: vertical , horizontal;
+    
+}
+
+textarea[name="summarized_text"] {
+    height: 400px;
+    width : 400px;
+    resize: vertical, horizontal;
+}
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .box {
+            width: 200%;
+            box-sizing: border-box;
+            padding:20px;
+        }
+        .output-box {
+            margin-left:20px; /* Adjust the margin to your preference */
+        }
+    </style>
+    <title>SnipNView-News Summarization</title>
+</head>
+<body>
+    <h1>SnipNView</h1>
+    <form method="POST" action="/">
+        <div class="container">
+            <div class="box">
+                <label for="input_text">Input Text:</label><br>
+                <textarea name="input_text" rows="10" cols="80">{{ input_text }}</textarea>
+            </div>
+            <div class="box output-box">
+                <label for="summarized_text">Summarized Text:</label><br>
+                <textarea name="summarized_text" rows="10" cols="50">{{ summarized_text }}</textarea>
+            </div>
+        </div>
+        <input type="submit" value="Summarize">
+    </form>
+</body>
+</html>
